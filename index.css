@@ -1,0 +1,54 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    background-color: darkgrey;
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+
+}
+.main-container{
+    /* background-color: white; */
+    /* width: 700px;
+    height: 700px; */
+    display: grid;
+    grid-template-columns: 200px 200px 200px;
+    grid-template-rows: 200px 200px 200px;
+    gap: 10px;
+    
+   
+}
+/* .box{
+    width: 200px;
+    height: 200px;
+    background-color: blue;
+} */
+.blue{
+    background-color: blue;
+}
+.red {
+    background-color: red;
+}
+.dark-blue{
+    background-color: darkblue;
+
+}
+.yellow{
+    background-color: yellow;
+}
+.purple{
+    background-color: purple;
+}
+.green{
+    background-color: green;
+}
+.orange{
+    background-color: orange;
+}
+.azura{
+    background-color: azure;
+}
+.dark-red{
+    background-color: darkred;
+}
