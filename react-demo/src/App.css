@@ -1,0 +1,108 @@
+nav {
+  background-color: blue;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.btns {
+  display: flex;
+  gap: 15px;
+  margin-left: 20px;
+  align-items: baseline;
+}
+.btns span {
+  color: white;
+  font-size: 30px;
+  font-weight: bolder;
+}
+.input-container {
+  margin-right: 20px;
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+#in1 {
+  height: 40px;
+  width: 200px;
+  border-radius: 5px;
+}
+#in2 {
+  height: 40px;
+  width: 80px;
+  background: none;
+  color: white;
+  font-size: large;
+  border: 1px solid white;
+  border-radius: 5px;
+}
+.links {
+  background: none;
+  color: white;
+  border: none;
+  font-size: large;
+  font-weight: bold;
+  text-decoration: none;
+}
+.btns button:hover {
+  cursor: pointer;
+  color: gray;
+}
+#in2:hover {
+  cursor: pointer;
+  background-color: gray;
+}
+
+header {
+  border: 3px solid green;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: green;
+  font-weight: bold;
+}
+bar {
+  border: 3px solid blue;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: blue;
+  font-weight: bold;
+}
+article {
+  border: 3px solid purple;
+  height: 600px;
+  width: 66%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: purple;
+  font-weight: bold;
+}
+aside {
+  border: 3px solid yellow;
+  height: 600px;
+  width: 33%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: yellow;
+  font-weight: bold;
+}
+.section {
+  display: flex;
+}
+.container {
+  background-color: black;
+}
+footer {
+  border: 3px solid red;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: red;
+  font-weight: bold;
+}
