@@ -1,7 +1,7 @@
 const { default: Link } = require("next/link");
 import Logo from "@/icons/icon";
 import Toggle from "@/icons/toggler";
-import { useTheme } from "next-themes";
+`import { useTheme } from "next-themes";`;
 import Menu from "@/icons/menucon";
 
 function Bar() {
