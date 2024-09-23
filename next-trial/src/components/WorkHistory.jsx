@@ -1,6 +1,6 @@
 import { WorkCard } from "./WorkCard";
 import Mentorpic from "../../public/Mentor.png";
-import Itoimpic from "../../public/IToim.png";
+import Itoimpic from "../../public/Itoim.png";
 import UBCab from "../../public/ubcab.png";
 
 export const WorkHistory = () => {

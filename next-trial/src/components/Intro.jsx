@@ -4,6 +4,8 @@ import Greendot from "@/icons/greenDot";
 import Socialmedia from "@/icons/socialMedia";
 import Intropic from "../pics/Intropic";
 import { useTheme } from "next-themes";
+import DarkModeLocation from "@/icons/locationDarkMode";
+import DarkModeSocial from "@/icons/socialMediaDarkMode";
 
 function Intro() {
   const { theme } = useTheme();
@@ -25,7 +27,7 @@ function Intro() {
           </div>
           <div className="flex flex-col gap-[8px] text-gray-600 dark:text-white">
             <div className="flex gap-[8px]">
-              <Location theme={theme} />
+              {theme == "dark" ? <DarkModeLocation /> : <Location />}
               <p>Ulaanbaatar, Mongolia</p>
             </div>
             <div className="flex gap-[8px]">
@@ -33,7 +35,7 @@ function Intro() {
               <p> Available for new projects</p>
             </div>
           </div>
-          <Socialmedia them={theme} />
+          {theme == "dark" ? <DarkModeSocial /> : <Socialmedia />}
         </div>
         <div className="w-[568px] flex max-[431px]:w-[343px]">
           <div className="w-[248px] max-[431px]:hidden"></div>

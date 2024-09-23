@@ -3,6 +3,10 @@ import Phonecon from "@/icons/phonecon";
 import Emailcon from "@/icons/emailcon";
 import Socialmedia from "@/icons/socialMedia";
 import { useTheme } from "next-themes";
+import DarkModeSocial from "@/icons/socialMediaDarkMode";
+import DarkModeEmail from "@/icons/emailDarkMode";
+import DarkModeSquare from "@/icons/squareDarkMode";
+import DarkModePhone from "@/icons/phoneDarkMode";
 export const Footer = () => {
   const { theme } = useTheme();
   return (
@@ -19,23 +23,23 @@ export const Footer = () => {
         </div>
         <div className="flex flex-col gap-[16px] max-[431px]:w-[252px]">
           <div className="flex gap-[20px] items-center max-[431px]:gap-[16px]">
-            <Emailcon theme={theme} />
+            {theme == "dark" ? <DarkModeEmail /> : <Emailcon />}
             <h1 className="font-semibold text-[36px] max-[431px]:text-[16px]">
               tom@pinecone.mn
             </h1>
-            <Squarecon theme={theme} />
+            {theme == "dark" ? <DarkModeSquare /> : <Squarecon />}
           </div>
           <div className="flex gap-[20px] items-center max-[431px]:gap-[16px]">
-            <Phonecon theme={theme} />
+            {theme == "dark" ? <DarkModePhone /> : <Phonecon />}
             <h1 className="font-semibold text-[36px] max-[431px]:text-[16px]">
               +976 88112233
             </h1>
-            <Squarecon theme={theme} />
+            {theme == "dark" ? <DarkModeSquare /> : <Squarecon />}
           </div>
         </div>
         <div className="flex flex-col items-center gap-[8px] text-gray-600 dark:text-gray-300">
           <p>You may also find me on these platforms!</p>
-          <Socialmedia them={theme} />
+          {theme == "dark" ? <DarkModeSocial /> : <Socialmedia />}
         </div>
       </div>
     </div>

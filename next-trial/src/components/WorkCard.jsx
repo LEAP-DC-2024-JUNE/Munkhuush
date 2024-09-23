@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Arrow from "@/icons/arrow";
 import { useTheme } from "next-themes";
+import ArrowDarkMode from "@/icons/arrowDarkMode";
 export const WorkCard = ({ title, desc, imgSrc, chips, reverse }) => {
   const { theme } = useTheme();
   return (
@@ -36,9 +37,7 @@ export const WorkCard = ({ title, desc, imgSrc, chips, reverse }) => {
             );
           })}
         </div>
-        <div>
-          <Arrow theme={theme} />
-        </div>
+        <div>{theme == "dark" ? <ArrowDarkMode /> : <Arrow />}</div>
       </div>
       {reverse && (
         <div className=" max-[431px]:hidden min-[431px]:w-[576px] bg-gray-50 min-[431px]:flex min-[431px]:justify-center min-[431px]:items-center  rounded-r-[12px] dark:bg-gray-700">
