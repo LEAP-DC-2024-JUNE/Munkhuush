@@ -72,6 +72,7 @@ const Form = () => {
       />
       <input
         className="border-2"
+        name="Email"
         type="email"
         placeholder="email"
         onChange={(event) => handleEmail(event.target.value)}
