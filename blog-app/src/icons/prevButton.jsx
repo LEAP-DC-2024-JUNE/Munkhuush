@@ -1,6 +1,7 @@
 const PrevButton = ({ props }) => {
   return (
     <svg
+      className="hover:cursor-pointer hover:bg-gray-100"
       onClick={props}
       width="40"
       height="40"

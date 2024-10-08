@@ -146,14 +146,18 @@ export const BlogContainer = ({ inputValue }) => {
           )}
         </div>
 
-        <div className="w-[1440px] text-center">
-          <button
-            onClick={loadMore}
-            className="border-[1px] px-[20px] py-[12px] rounded-md text-gray-500 font-medium"
-          >
-            Load More
-          </button>
-        </div>
+        {filteredArticles.length !== 0 ? (
+          <div className="w-[1440px] text-center">
+            <button
+              onClick={loadMore}
+              className="border-[1px] px-[20px] py-[12px] rounded-md text-gray-500 font-medium hover:bg-gray-100"
+            >
+              Load More
+            </button>
+          </div>
+        ) : (
+          <></>
+        )}
       </div>
     </div>
   );

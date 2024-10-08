@@ -23,9 +23,15 @@ export const Footer = () => {
         </div>
         <div className="w-[521px] flex justify-center">
           <div className=" flex flex-col gap-[8px]">
-            <Link href="/">Home</Link>
-            <Link href="/blog">Blog</Link>
-            <Link href="/contactUs">Contact</Link>
+            <Link className="hover:underline" href="/">
+              Home
+            </Link>
+            <Link className="hover:underline" href="/blog">
+              Blog
+            </Link>
+            <Link className="hover:underline" href="/contactUs">
+              Contact
+            </Link>
           </div>
         </div>
         <div>
@@ -37,9 +43,9 @@ export const Footer = () => {
           <LogoFooter />
         </div>
         <div className="w-[921px] flex gap-4 justify-end ">
-          <span>Term of Use</span>
-          <span>Privacy Policy</span>
-          <span>Cookie Policy</span>
+          <span className="hover:underline">Term of Use</span>
+          <span className="hover:underline">Privacy Policy</span>
+          <span className="hover:underline">Cookie Policy</span>
         </div>
       </div>
     </div>

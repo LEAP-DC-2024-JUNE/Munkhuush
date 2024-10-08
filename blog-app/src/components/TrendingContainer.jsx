@@ -19,6 +19,7 @@ export const TrendingContainer = () => {
           return (
             <div>
               <TrendingCard
+                id={article.id}
                 pic={article.social_image}
                 title={article.title}
                 chips={article.user.username}
