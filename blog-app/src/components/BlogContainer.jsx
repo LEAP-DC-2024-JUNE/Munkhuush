@@ -48,20 +48,24 @@ import { useState, useEffect } from "react";
 import { BlogCard } from "./BlogCard";
 import Image from "next/image";
 import notFound from "../../public/no-results-page.png";
+import { useContext } from "react";
+import { MyContext } from "@/utils/context";
 
-export const BlogContainer = ({ inputValue }) => {
-  const [articles, setArticles] = useState([]);
-  const [count, setCount] = useState(12);
-  const [category, setCategory] = useState("");
+export const BlogContainer = () => {
+  // const [articles, setArticles] = useState([]);
+  // const [count, setCount] = useState(12);
+  // const [category, setCategory] = useState("");
 
-  const FetchData = () => {
-    fetch(`https://dev.to/api/articles?per_page=${count}&tag=${category}`)
-      .then((response) => response.json())
-      .then((data) => setArticles(data));
-  };
-  useEffect(() => {
-    FetchData();
-  }, [count, category]);
+  // const FetchData = () => {
+  //   fetch(`https://dev.to/api/articles?per_page=${count}&tag=${category}`)
+  //     .then((response) => response.json())
+  //     .then((data) => setArticles(data));
+  // };
+  // useEffect(() => {
+  //   FetchData();
+  // }, [count, category]);
+  const { articles, category, setCategory, count, setCount, inputValue } =
+    useContext(MyContext);
 
   const filteredArticles = articles.filter((article) => {
     return article.title.toLowerCase().includes(inputValue.toLowerCase());
@@ -84,38 +88,71 @@ export const BlogContainer = ({ inputValue }) => {
           <div className="flex gap-[20px] ">
             <span
               onClick={() => filterCategory("")}
-              className="hover:text-gray-400 hover:cursor-pointer"
+              // className="hover:text-gray-400 hover:cursor-pointer "
+              className={`hover:text-gray-400 hover:cursor-pointer ${
+                category == "" ? `text-gray-400 underline` : `text-black`
+              }`}
             >
               All
             </span>
             <span
               onClick={() => filterCategory("javascript")}
-              className="hover:text-gray-400 hover:cursor-pointer"
+              className={`hover:text-gray-400 hover:cursor-pointer ${
+                category == "javascript"
+                  ? `text-gray-400 underline`
+                  : `text-black`
+              }`}
+              // className={
+              //   category == "javascript" ? `text-gray-400` : `text-black`
+              // }
             >
               Javascript
             </span>
             <span
               onClick={() => filterCategory("css")}
-              className="hover:text-gray-400 hover:cursor-pointer"
+              // className="hover:text-gray-400 hover:cursor-pointer"
+              className={`hover:text-gray-400 hover:cursor-pointer ${
+                category == "css" ? `text-gray-400 underline` : `text-black`
+              }`}
             >
               Css
             </span>
             <span
               onClick={() => filterCategory("nextjs")}
-              className="hover:text-gray-400 hover:cursor-pointer"
+              // className="hover:text-gray-400 hover:cursor-pointer"
+              className={`hover:text-gray-400 hover:cursor-pointer ${
+                category == "nextjs" ? `text-gray-400 underline` : `text-black`
+              }`}
             >
               Nextjs
             </span>
-            <span className="hover:text-gray-400 hover:cursor-pointer">
+            <span
+              onClick={() => filterCategory("technology")}
+              className={`hover:text-gray-400 hover:cursor-pointer ${
+                category == "technology"
+                  ? `text-gray-400 underline`
+                  : `text-black`
+              }`}
+            >
               Technology
             </span>
-            <span className="hover:text-gray-400 hover:cursor-pointer">
+            <span
+              onClick={() => filterCategory("branding")}
+              className={`hover:text-gray-400 hover:cursor-pointer  ${
+                category == "branding"
+                  ? `text-gray-400 underline `
+                  : `text-black`
+              }`}
+            >
               Branding
             </span>
           </div>
           <div
             onClick={loadAll}
             className="hover:text-gray-400 hover:cursor-pointer"
+            // className={
+            //   count == 30 || category == "" ? `text-gray-400` : `text-black`
+            // }
           >
             View All
           </div>
@@ -123,7 +160,7 @@ export const BlogContainer = ({ inputValue }) => {
       </div>
       <div className=" flex flex-col gap-[32px] mb-[32px]">
         <div className="w-[1440px] flex flex-wrap gap-[20px] px-[112px]">
-          {filteredArticles.length !== 0 ? (
+          {filteredArticles.length > 0 ? (
             filteredArticles.map((article) => {
               return (
                 <div>

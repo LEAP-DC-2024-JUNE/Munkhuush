@@ -41,7 +41,7 @@ export const CarouselContainer = () => {
   return (
     <div className="flex flex-col items-center gap-[11px]">
       <CarouselCard article={articles[index]} />
-      <div className="flex w-[1215px] justify-end">
+      <div className="flex gap-[9px] w-[1215px] justify-end">
         <PrevButton props={handlePrevious} />
         <NextButton props2={handleNext} />
       </div>

@@ -12,13 +12,13 @@ import {
 import { useState } from "react";
 
 export default function Home() {
-  const [inputValue, setInputValue] = useState("");
+  // const [inputValue, setInputValue] = useState("");
   return (
     <div>
-      <Header setInputValue={setInputValue} />
+      <Header />
       <CarouselContainer />
       <TrendingContainer />
-      <BlogContainer inputValue={inputValue} />
+      <BlogContainer />
       <Footer />
     </div>
   );

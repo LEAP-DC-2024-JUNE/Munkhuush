@@ -1,32 +1,56 @@
 import Logo from "@/icons/logo";
 import SearchIcon from "@/icons/search";
+import { MyContext } from "@/utils/context";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { useState, useContext } from "react";
 
-export const Header = ({ setInputValue }) => {
+export const Header = () => {
   const router = useRouter();
+  // const [line, setLine] = useState("");
+  const { setInputValue } = useContext(MyContext);
+  // const addLine = (param1) => {
+  //   setLine(param1);
+  // };
+  console.log(router.pathname);
+
   return (
     <div className="py-8 px-40">
       <div className="flex items-center justify-between">
-        <div>
+        <Link href="/">
           <Logo />
-        </div>
+        </Link>
         <div className="flex items-center w-[854px] gap-[21px]">
           <div className="w-[667px] flex gap-[40px] justify-center font-normal">
             <Link
-              className="px-2 hover:text-white hover:bg-black hover:rounded-xl  "
+              // onClick={() => setLine("home")}
               href="/"
+              className={`px-2 hover:text-white hover:bg-black hover:rounded-xl ${
+                router.pathname == "/"
+                  ? `text-white bg-black rounded-xl`
+                  : `text-black `
+              }`}
             >
               Home
             </Link>
             <Link
-              className="px-2 hover:text-white hover:bg-black hover:rounded-xl  "
+              // onClick={() => setLine("blog")}
+              className={`px-2 hover:text-white hover:bg-black hover:rounded-xl ${
+                router.pathname == "/blog"
+                  ? `text-white bg-black rounded-xl`
+                  : `text-black `
+              }`}
               href="/blog"
             >
               Blog
             </Link>
             <Link
-              className="px-2 hover:text-white hover:bg-black hover:rounded-xl  "
+              // onClick={() => setLine("contactus")}
+              className={`px-2 hover:text-white hover:bg-black hover:rounded-xl ${
+                router.pathname == "/contactUs"
+                  ? `text-white bg-black rounded-xl`
+                  : `text-black `
+              }`}
               href="/contactUs"
             >
               Contact
